@@ -23,7 +23,8 @@ namespace MovieApi.Controllers
         public IEnumerable<MovieInfo> Get()
         {
             return context.Movies.ToArray()
-                .Where(x => x.Edited == "Yes");
+                .Where(x => x.Edited == "Yes")
+                .OrderBy(x => x.Title);
         }
     }
 }
